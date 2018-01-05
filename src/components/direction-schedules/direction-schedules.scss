@@ -1,0 +1,31 @@
+direction-schedules {
+    .card-md,
+    .card-ios,
+    .card-wp {
+        width: 96vw;
+        margin-left: -10px;
+    }
+    .card-content {
+        padding: 0px; //Schedules have no padding from directions header
+    }
+    ion-icon {
+        //From to icon
+        font-size: 1em;
+    }
+    .showHideButton {
+        //Show hide icon
+        position: absolute;
+        right: 5%;
+        font-size: 1.4em;
+    }
+    ion-card-content {
+        position: relative;
+        border: 1px solid whitesmoke;
+    }
+    .iconAddMoreSchedules {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        font-size: 40px;
+    }
+}

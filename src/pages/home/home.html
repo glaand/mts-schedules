@@ -1,0 +1,39 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title text-center>
+			MTS Horários
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+	<!-- <div class="wrapper"> -->
+		<ion-card class="upcomingMetros" no-padding (click)="upcomingMetrosPage()">
+			<ion-card-content class="upcomingMetros-content" no-padding>
+				<img src="assets/imgs/metro.jpg" url="http://www.leme.pt/imagens/portugal/meios-de-transporte/metropolitanos/metro-transportes-do-sul/0001.jpg"
+				 class="upcomingMetros-img">
+				<div class="upcomingMetros-titleDiv text">Próximos metros</div>
+				<!-- <ion-icon name="pin" class="upcomingMetros-iconGPS"> </ion-icon> -->
+				<!--<div class="card-subtitle">Ver metros da estação mais perto</div>-->
+			</ion-card-content>
+		</ion-card>
+
+		<ion-card class="schedules" no-padding>
+			<ion-card-content class="schedules-content" no-padding>
+				<img src="assets/imgs/schedules.jpg" class="schdeules-img">
+				<div class="schedules-titleDiv text">Horários</div>
+				<!-- <ion-icon ios="ios-calendar" md="md-calendar" class="schedules-icon"></ion-icon> -->
+				<!--<div class="card-subtitle">Ver metros da estação mais perto</div>-->
+			</ion-card-content>
+		</ion-card>
+
+		<ion-card class="tripPlanning" no-padding>
+			<ion-card-content class="tripPlanning-content" no-padding>
+				<img src="assets/imgs/mts-map.jpg" class="tripPlanning-img">
+				<div class="tripPlanning-titleDiv text">Rede MTS</div>
+				<!-- <ion-icon ios="ios-subway" md="md-subway" class="tripPlanning-icon"></ion-icon> -->
+				<!-- <ion-icon ios="ios-train" md="md-train" class="settingsIcon"></ion-icon>-->
+			</ion-card-content>
+		</ion-card>
+
+</ion-content>

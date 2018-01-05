@@ -1,0 +1,77 @@
+@mixin cardMenu($hasBorderBottom, $backgroundColor ){
+	//https://forum.ionicframework.com/t/how-to-use-variable-scss-color-in-scss-file/68813/3
+    @if $hasBorderBottom { border-bottom: 1px solid color($colors, tomato); }
+    background-color: $backgroundColor;
+}
+
+//For each ion-card
+@mixin cardTitleDiv($top, $width, $hasLetterSpacing) {
+    position: absolute;
+    top: $top;//50% abaixo do cimo do elem. pai
+	left: 50%;
+	// bottom: 50%;
+	width: $width;//ocupa 100% do width do pai
+    text-align: center;//No centro do elem
+    font-size: 24px;
+    font-weight: bold;//Tamanho das letras
+	color: white;
+	transform: translateX(-50%) translateY(-50%);
+    @if $hasLetterSpacing { letter-spacing: 3px; }//Espacamento entre letras
+}
+
+//For each image inside the ion-card
+@mixin cardImages($opacity) {
+    opacity: $opacity;
+	height: 100%;
+    position: absolute;
+}
+
+page-home {
+	.scroll-content {
+		max-height: 100%;
+	}
+
+	.card-md, .card-ios, .card-wp {
+		margin: 0px;
+		width: 100%;
+		border-radius: 0px;
+		height: 33.33%; //Percentage for each Card
+	}
+
+	ion-card-content {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	/*-------------------- PROX METROS ----------------*/
+	.upcomingMetros {
+		@include cardMenu(true, black);
+		img {
+			@include cardImages(0.19);
+		}
+		.text {
+			@include cardTitleDiv(50%, 100%, true);
+		}
+	}
+	/*-------------------- HORARIOS ----------------*/
+	.schedules {
+		@include cardMenu(true, black);
+		img {
+			@include cardImages(0.25);
+		}
+		.text {
+			@include cardTitleDiv(50%, 100%, true);
+		}
+	}
+	/*-------------------- REDE MTS ----------------*/
+	.tripPlanning {
+		@include cardMenu(false, black);
+		img {
+			@include cardImages(0.12);
+		}
+		.text {
+			@include cardTitleDiv(50%, 100%, true);
+		}
+	}
+}

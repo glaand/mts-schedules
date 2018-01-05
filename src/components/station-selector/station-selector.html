@@ -1,0 +1,11 @@
+<!-- Generated template for the StationSelectorComponent component -->
+<!-- <div id="lel">
+    {{text}}
+</div> -->
+
+<ion-item>
+    <ion-label>{{labelStr}}</ion-label>
+    <ion-select [(ngModel)]="selectedStatioName" (ionChange)="onSelectChange($event)">
+        <ion-option *ngFor="let station of stations" value={{station.name}}>{{station.name}}</ion-option>
+    </ion-select>
+</ion-item>

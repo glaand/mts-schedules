@@ -1,0 +1,20 @@
+<!-- https://www.youtube.com/watch?v=47DP2db-4k8 -->
+<ion-card color="mts" *ngFor="let s of schedulesByDirection; let i = index">
+
+    <ion-card-header (click)="toggleDetails(s,i)">
+        <span class="headerDirection">
+            {{s.direction.source}}
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{s.direction.destination}}
+        </span>
+        <ion-icon class="showHideButton" [name]="selectedAccordionIndex == i ? 'arrow-round-up' : 'arrow-round-down'"></ion-icon>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="selectedAccordionIndex==i">
+        <ion-item class="item-accordion" *ngFor="let sch of (s.schedules ? s.schedules.slice(0,numberOfSchedulesToShow) : [])">
+            {{sch.diffToTimeNow}}' {{sch.time_hours}}
+        </ion-item>
+
+        <ion-icon name="add-circle" class="iconAddMoreSchedules" (click)="show3MoreSchedules(s)" color="mts"></ion-icon>
+    </ion-card-content>
+</ion-card>

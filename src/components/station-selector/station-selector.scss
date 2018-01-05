@@ -1,0 +1,17 @@
+station-selector {
+    #lel {
+        background-color: red;
+    }
+    ion-option {
+        background-color: red;
+    }
+    /*  ion-label {
+        background-color: color($colors, secondary);
+    } */
+    ion-select {
+        // background-color: color($colors, secondary);
+    }
+    ion-select .select-text {
+        white-space: initial;
+    }
+}

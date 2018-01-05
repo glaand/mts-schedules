@@ -1,0 +1,15 @@
+page-upcoming-metros {
+    .centerButton {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    ion-item {
+        width: 100%;
+        background-color: red;
+    }
+}
+
+.toast-container {
+    background-color: color($colors, tomato);
+}

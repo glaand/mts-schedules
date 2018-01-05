@@ -1,0 +1,8 @@
+{
+  "name": "mts-schedules",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

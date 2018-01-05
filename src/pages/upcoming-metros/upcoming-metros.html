@@ -1,0 +1,35 @@
+<!--
+  Generated template for the UpcomingMetrosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Próximos Metros</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)" *ngIf="!showStationSelector">
+        <ion-refresher-content pullingIcon="arrow-down" pullingText="Atualizar horários" refreshingSpinner="circles">
+        </ion-refresher-content>
+        <!-- refreshingText="A atualizar horários..." -->
+    </ion-refresher>
+
+    <!-- If GPS fails -->
+    <div *ngIf="showStationSelector">
+        <station-selector [stations]="stations" [selectedStationName]="stations[0].name" labelStr="Escolha Estação"></station-selector>
+        <button ion-button class="centerButton" (click)="showSchedules()">Ver Horários</button>
+    </div>
+
+    <div *ngIf="closestStation!==undefined">
+        <ion-item>
+            Estação: {{closestStation.name}}
+        </ion-item>
+    </div>
+
+    <!-- Otherwise show Schedules for the closest station -->
+    <direction-schedules></direction-schedules>
+    {{latitude}} {{longitude}} {{error}}
+</ion-content>
